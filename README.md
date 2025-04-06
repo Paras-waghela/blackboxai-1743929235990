@@ -1,89 +1,90 @@
-
-Built by https://www.blackbox.ai
-
----
-
 # Hospital File Management System
 
 ## Project Overview
-The Hospital File Management System (MediFile) is a web-based application designed to facilitate the secure and efficient management of patient records in hospitals. The user-friendly interface allows medical staff to create, view, and download patient files while ensuring data security and ease of access.
+The Hospital File Management System (MediFile) is a Java-based application with a web interface designed for secure patient record management. It uses RMI and Socket programming for backend operations and features a modern HTML/CSS frontend.
+
+## Key Features
+- **Patient Record Management**:
+  - Create new patient records
+  - View and search existing records
+  - Download patient files
+- **Advanced Search**:
+  - Search by patient name, diagnosis, or other criteria
+- **Data Security**:
+  - Secure file storage
+  - Encoded data transmission
+- **Modern UI**:
+  - Responsive design with Tailwind CSS
+  - Intuitive user interface
+
+## System Architecture
+- **Backend**:
+  - Java RMI for remote operations
+  - Socket server for real-time communication
+  - File-based data storage
+- **Frontend**:
+  - HTML5/CSS3 interface
+  - JavaScript for client-side operations
+  - Tailwind CSS for styling
 
 ## Installation
-To set up the project locally, follow these steps:
+1. **Requirements**:
+   - Java 8+
+   - Python 3 (for web server)
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-repository/hospital-file-management.git
-   ```
-   (Please replace the URL with your actual repository link.)
+2. **Setup**:
+```bash
+# Clone repository
+git clone https://github.com/your-repo/hospital-management.git
 
-2. **Navigate to the project directory**:
-   ```bash
-   cd hospital-file-management
-   ```
+# Make run script executable
+chmod +x run.sh
+```
 
-3. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+## Running the System
+```bash
+# Start the system
+./run.sh
+```
 
-4. **Start the server**:
-   For development, use:
-   ```bash
-   npm run dev
-   ```
-   For production, use:
-   ```bash
-   npm start
-   ```
-   The application will be running at `http://localhost:8000`.
+This will:
+- Start RMI registry (port 1099)
+- Launch Java server (port 8000)
+- Serve web interface (port 9000)
 
 ## Usage
-Upon starting the server, you can access the application by navigating to `http://localhost:8000/index.html` in your web browser.
+Access the web interface at: `http://localhost:9000/PatientForm.html`
 
-- **Login**: Access the system by clicking on the "Login" button.
-- **Create Patient File**: To add a new patient record, click on "Create Patient File".
-- **View Patient Files**: Browse and search for existing records via the "View Patient Files".
-- **Download Patient Files**: Download records for offline access through the "Download Files" section.
-
-## Features
-- Secure login for medical personnel.
-- Create new patient records with comprehensive medical history.
-- View and search through existing patient records.
-- Download patient files for offline use.
-- User-friendly and responsive interface utilizing Tailwind CSS.
-
-## Dependencies
-The following are the dependencies used in this project:
-
-- **Express**: Web framework for Node.js
-- **Nodemon (Development)**: Utility that automatically restarts the node application when file changes are detected.
-
-Dependencies are managed via the `package.json` file:
-```json
-{
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
-}
-```
+- **Create Records**: Fill the patient form and submit
+- **View Records**: Click "View All" to see all patients
+- **Search**: Use the search button to find specific records
+- **Download**: Click download button to save patient files
 
 ## Project Structure
-Here's an overview of the project directory structure:
-
 ```
-hospital-file-management/
-├── index.html          # Main dashboard file
-├── login.html          # Login page
-├── view.html           # Page for viewing patient files
-├── download.html       # Page for downloading patient records
-├── server.js           # Node.js server file
-├── package.json        # Project metadata and dependencies
-└── package-lock.json   # Dependency tree
+hospital-management/
+├── java/
+│   ├── HospitalServer.java       # Main server
+│   ├── PatientFileManager.java   # RMI interface
+│   ├── PatientFileManagerImpl.java # RMI implementation
+│   ├── HospitalClient.java       # Test client
+│   ├── Patient.java              # Data model
+│   └── FileUtils.java            # File operations
+├── web/
+│   ├── PatientForm.html          # Main interface
+│   ├── view.html                 # View records
+│   └── download.html             # Download page
+├── run.sh                        # Startup script
+└── README.md                     # Documentation
 ```
 
-## Conclusion
-The Hospital File Management System aims to simplify patient record management for hospitals, ensuring fast access and enhanced security. You are welcome to contribute to the project or use it as a reference for your own applications.
+## Dependencies
+- Java Standard Library
+- Python 3 (for web server)
+- Tailwind CSS (CDN)
+
+## Support
+For any issues, please contact: support@example.com
+
+## License
+MIT License
