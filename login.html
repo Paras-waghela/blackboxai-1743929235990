@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | MediFile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .btn {
+            @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2;
+        }
+        .btn-primary {
+            @apply bg-indigo-600 hover:bg-indigo-700 text-white;
+        }
+        .form-input {
+            @apply w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500;
+        }
+        .form-label {
+            @apply block text-gray-300 mb-2;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md">
+        <div class="bg-gray-800 rounded-xl shadow-xl p-8">
+            <div class="text-center mb-8">
+                <div class="bg-indigo-900/30 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-hospital text-indigo-400 text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold">MediFile</h1>
+                <p class="text-gray-400 mt-2">Hospital File Management System</p>
+            </div>
+
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label for="username" class="form-label">Username</label>
+                    <div class="relative">
+                        <i class="fas fa-user absolute left-3 top-3 text-gray-400"></i>
+                        <input type="text" id="username" name="username" class="form-input pl-10" placeholder="Enter your username" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="password" class="form-label">Password</label>
+                    <div class="relative">
+                        <i class="fas fa-lock absolute left-3 top-3 text-gray-400"></i>
+                        <input type="password" id="password" name="password" class="form-input pl-10" placeholder="Enter your password" required>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember" name="remember" type="checkbox" class="h-4 w-4 rounded border-gray-700 bg-gray-800 text-indigo-600 focus:ring-indigo-500">
+                        <label for="remember" class="ml-2 block text-sm text-gray-300">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-indigo-400 hover:text-indigo-300">Forgot password?</a>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary w-full">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6 text-center text-sm text-gray-400">
+                <p>Don't have an account? <a href="#" class="text-indigo-400 hover:text-indigo-300">Contact administrator</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulate login
+            console.log('Login attempt with:', {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            });
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
