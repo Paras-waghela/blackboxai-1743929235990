@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital File Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .btn {
+            @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2;
+        }
+        .btn-primary {
+            @apply bg-indigo-600 hover:bg-indigo-700 text-white;
+        }
+        .btn-secondary {
+            @apply bg-gray-700 hover:bg-gray-600 text-white;
+        }
+        .card {
+            @apply bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 border-b border-gray-700 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-hospital text-indigo-500 text-2xl"></i>
+                <h1 class="text-xl font-bold">MediFile</h1>
+            </div>
+            <div class="flex space-x-4">
+                <a href="login.html" class="btn btn-secondary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-2">Hospital File Management</h2>
+            <p class="text-gray-400">Secure and efficient patient record management</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Create File Card -->
+            <a href="create.html" class="card group">
+                <div class="text-center">
+                    <div class="bg-indigo-900/30 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 group-hover:bg-indigo-900/50 transition-colors">
+                        <i class="fas fa-file-medical text-indigo-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Create Patient File</h3>
+                    <p class="text-gray-400">Add new patient records with complete medical history</p>
+                </div>
+            </a>
+
+            <!-- View Files Card -->
+            <a href="view.html" class="card group">
+                <div class="text-center">
+                    <div class="bg-indigo-900/30 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 group-hover:bg-indigo-900/50 transition-colors">
+                        <i class="fas fa-folder-open text-indigo-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">View Patient Files</h3>
+                    <p class="text-gray-400">Browse and search through existing patient records</p>
+                </div>
+            </a>
+
+            <!-- Download Card -->
+            <a href="download.html" class="card group">
+                <div class="text-center">
+                    <div class="bg-indigo-900/30 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 group-hover:bg-indigo-900/50 transition-colors">
+                        <i class="fas fa-file-download text-indigo-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Download Files</h3>
+                    <p class="text-gray-400">Export patient records for offline access</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 p-4 mt-12">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>© 2023 MediFile Hospital Management System</p>
+        </div>
+    </footer>
+</body>
+</html>
